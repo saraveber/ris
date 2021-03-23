@@ -1,0 +1,2 @@
+exercise3:exercise4
+-DCATKIN_DEVEL_PREFIX=/home/sara/WORKSPACE/devel -DCMAKE_INSTALL_PREFIX=/home/sara/WORKSPACE/install -G Unix Makefiles
