@@ -177,36 +177,33 @@ class face_localizer:
                 # Find the location of the detected face
                 pose = self.get_pose((x1,x2,y1,y2), face_distance, depth_time)
                 
+
                 is_new = 1
-                i = 0
                 marker_id = 0
+                i = 0
 
                 for p in self.face_positions:
                     a = numpy.array((p.position.x ,p.position.y, p.position.z))
                     b = numpy.array((pose.position.x, pose.position.y, pose.position.z))
-                    
                     dist = numpy.linalg.norm(a-b)
-                    if (dist < 0.5):
+                    if(dist < 0.5):
                         is_new = 0
-                        c = (a*self.number_of_detections[i]+b)/(self.number_of_detections[i]+1)
+                        #c = (a*self.number_of_detections[i]+b)/(self.number_of_detections[i]+1)
                         #zato da je shranjen avrage trenutno dala ven ker iscem bug
                         #self.face_positions[i].position.x = c[0]
                         #self.face_positions[i].position.y = c[1]
-                        self.number_of_detections[i] +=1
-                        #print("obraz stevika:"+str(i))
+                        self.number_of_detections[i] = self.number_of_detections[i]+1
                         marker_id = i
-                        break
-                    i+=1
 
-                
-
-                if pose is not None and is_new == 1:
+                    i = i + 1
 
                     
-                    self.number_of_detections.append(0)
+                if (is_new and pose is not None and not math.isnan(face_distance)):
                     self.face_positions.append(pose)
-                    merker_id = self.marker_num
-                    self.marker_num += 1
+                    self.number_of_detections.append(1)
+                    marker_id = self.marker_num
+                    self.marker_num = self.marker_num +1
+
                     #dodaj premik proti obrazu in ustavitev
 
                     #Posiljenaje pozdrava voice
@@ -215,35 +212,33 @@ class face_localizer:
                     self.soundhandle.volume = 2.0
                     self.soundhandle.arg = "hello, how are you"
                     self.voice_pub.publish(self.soundhandle)
-                    
+                
 
-
-                    
-                    
-    
-                if pose is not None: 
-                    # Create a marker used for visualization 
+                if (pose is not None and  not math.isnan(face_distance)):
                     marker = Marker()
                     marker.header.stamp = rospy.Time(0)
                     marker.header.frame_id = 'map'
                     marker.pose = self.face_positions[marker_id];
-                    marker.type = 9
-                    marker.text = str(self.number_of_detections[marker_id]+1)
-                    marker.action = Marker.ADD
+                    marker.type = 9 
+                    marker.text = str(self.number_of_detections[marker_id])
+                    marker.action = 0
                     marker.frame_locked = False
                     marker.lifetime = rospy.Duration.from_sec(100)
-                    marker.id = marker_id+1
-                    marker.scale = Vector3(0.3, 0.3, 0.3)
+                    marker.id = marker_id
+                    marker.scale = Vector3(1, 1, 1)
                     marker.color = ColorRGBA(0,0 , 0, 1)
                     self.marker_array.markers.append(marker)
                     self.markers_pub.publish(self.marker_array)
 
-                    print(self.face_positions)
-                    print(self.number_of_detections)
+                    if is_new:
+                        print ("neeeeeeew detection!!!!!!!!!")
+                    else: 
+                        print (" ta obraz sem ze detektiral")
+                    print(self.marker_num)
+                    print (self.number_of_detections)
+                    #print (self.face_positions)
+                    print("marker id is" + str(marker_id))
 
-                    #if(is_new):
-                        #print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                        #print(self.marker_array.markers)
 
 
     def depth_callback(self,data):
