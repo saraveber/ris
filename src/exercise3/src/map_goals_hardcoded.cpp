@@ -30,7 +30,7 @@ geometry_msgs::TransformStamped map_transform;
 
 
 int main(int argc, char** argv){
-	ros::init(argc, argv, "map_goals2");
+	ros::init(argc, argv, "map_goals_hardcoded");
 
 	//tell the action client that we want to spin a thread by default
 	MoveBaseClient ac("move_base", true);
@@ -88,6 +88,7 @@ int main(int argc, char** argv){
 
 		
 		ROS_INFO("Sending goal");
+		
 	  	ac.sendGoal(goal2);
 
 		ac.waitForResult();

@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/sara/WORKSPACE/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -100,6 +88,18 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target test
 test:
@@ -168,34 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-exercise3/CMakeFiles/map_goals.dir/rule:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals.dir/rule
-.PHONY : exercise3/CMakeFiles/map_goals.dir/rule
+exercise3/CMakeFiles/map_goals_hardcoded.dir/rule:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals_hardcoded.dir/rule
+.PHONY : exercise3/CMakeFiles/map_goals_hardcoded.dir/rule
 
 # Convenience name for target.
-map_goals: exercise3/CMakeFiles/map_goals.dir/rule
+map_goals_hardcoded: exercise3/CMakeFiles/map_goals_hardcoded.dir/rule
 
-.PHONY : map_goals
+.PHONY : map_goals_hardcoded
 
 # fast build rule for target.
-map_goals/fast:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals.dir/build.make exercise3/CMakeFiles/map_goals.dir/build
-.PHONY : map_goals/fast
-
-# Convenience name for target.
-exercise3/CMakeFiles/map_goals2.dir/rule:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals2.dir/rule
-.PHONY : exercise3/CMakeFiles/map_goals2.dir/rule
-
-# Convenience name for target.
-map_goals2: exercise3/CMakeFiles/map_goals2.dir/rule
-
-.PHONY : map_goals2
-
-# fast build rule for target.
-map_goals2/fast:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals2.dir/build.make exercise3/CMakeFiles/map_goals2.dir/build
-.PHONY : map_goals2/fast
+map_goals_hardcoded/fast:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_hardcoded.dir/build.make exercise3/CMakeFiles/map_goals_hardcoded.dir/build
+.PHONY : map_goals_hardcoded/fast
 
 # Convenience name for target.
 exercise3/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
@@ -241,6 +226,21 @@ tf2_msgs_generate_messages_lisp: exercise3/CMakeFiles/tf2_msgs_generate_messages
 tf2_msgs_generate_messages_lisp/fast:
 	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make exercise3/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
 .PHONY : tf2_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+exercise3/CMakeFiles/map_goals_auto.dir/rule:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals_auto.dir/rule
+.PHONY : exercise3/CMakeFiles/map_goals_auto.dir/rule
+
+# Convenience name for target.
+map_goals_auto: exercise3/CMakeFiles/map_goals_auto.dir/rule
+
+.PHONY : map_goals_auto
+
+# fast build rule for target.
+map_goals_auto/fast:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_auto.dir/build.make exercise3/CMakeFiles/map_goals_auto.dir/build
+.PHONY : map_goals_auto/fast
 
 # Convenience name for target.
 exercise3/CMakeFiles/actionlib_generate_messages_py.dir/rule:
@@ -466,6 +466,21 @@ std_msgs_generate_messages_eus: exercise3/CMakeFiles/std_msgs_generate_messages_
 std_msgs_generate_messages_eus/fast:
 	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make exercise3/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+exercise3/CMakeFiles/map_goals_original.dir/rule:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals_original.dir/rule
+.PHONY : exercise3/CMakeFiles/map_goals_original.dir/rule
+
+# Convenience name for target.
+map_goals_original: exercise3/CMakeFiles/map_goals_original.dir/rule
+
+.PHONY : map_goals_original
+
+# fast build rule for target.
+map_goals_original/fast:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_original.dir/build.make exercise3/CMakeFiles/map_goals_original.dir/build
+.PHONY : map_goals_original/fast
 
 # Convenience name for target.
 exercise3/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
@@ -872,59 +887,86 @@ nav_msgs_generate_messages_eus/fast:
 	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make exercise3/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
 .PHONY : nav_msgs_generate_messages_eus/fast
 
-src/map_goals.o: src/map_goals.cpp.o
+src/map_goals_auto.o: src/map_goals_auto.cpp.o
 
-.PHONY : src/map_goals.o
-
-# target to build an object file
-src/map_goals.cpp.o:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals.dir/build.make exercise3/CMakeFiles/map_goals.dir/src/map_goals.cpp.o
-.PHONY : src/map_goals.cpp.o
-
-src/map_goals.i: src/map_goals.cpp.i
-
-.PHONY : src/map_goals.i
-
-# target to preprocess a source file
-src/map_goals.cpp.i:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals.dir/build.make exercise3/CMakeFiles/map_goals.dir/src/map_goals.cpp.i
-.PHONY : src/map_goals.cpp.i
-
-src/map_goals.s: src/map_goals.cpp.s
-
-.PHONY : src/map_goals.s
-
-# target to generate assembly for a file
-src/map_goals.cpp.s:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals.dir/build.make exercise3/CMakeFiles/map_goals.dir/src/map_goals.cpp.s
-.PHONY : src/map_goals.cpp.s
-
-src/map_goals2.o: src/map_goals2.cpp.o
-
-.PHONY : src/map_goals2.o
+.PHONY : src/map_goals_auto.o
 
 # target to build an object file
-src/map_goals2.cpp.o:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals2.dir/build.make exercise3/CMakeFiles/map_goals2.dir/src/map_goals2.cpp.o
-.PHONY : src/map_goals2.cpp.o
+src/map_goals_auto.cpp.o:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_auto.dir/build.make exercise3/CMakeFiles/map_goals_auto.dir/src/map_goals_auto.cpp.o
+.PHONY : src/map_goals_auto.cpp.o
 
-src/map_goals2.i: src/map_goals2.cpp.i
+src/map_goals_auto.i: src/map_goals_auto.cpp.i
 
-.PHONY : src/map_goals2.i
+.PHONY : src/map_goals_auto.i
 
 # target to preprocess a source file
-src/map_goals2.cpp.i:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals2.dir/build.make exercise3/CMakeFiles/map_goals2.dir/src/map_goals2.cpp.i
-.PHONY : src/map_goals2.cpp.i
+src/map_goals_auto.cpp.i:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_auto.dir/build.make exercise3/CMakeFiles/map_goals_auto.dir/src/map_goals_auto.cpp.i
+.PHONY : src/map_goals_auto.cpp.i
 
-src/map_goals2.s: src/map_goals2.cpp.s
+src/map_goals_auto.s: src/map_goals_auto.cpp.s
 
-.PHONY : src/map_goals2.s
+.PHONY : src/map_goals_auto.s
 
 # target to generate assembly for a file
-src/map_goals2.cpp.s:
-	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals2.dir/build.make exercise3/CMakeFiles/map_goals2.dir/src/map_goals2.cpp.s
-.PHONY : src/map_goals2.cpp.s
+src/map_goals_auto.cpp.s:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_auto.dir/build.make exercise3/CMakeFiles/map_goals_auto.dir/src/map_goals_auto.cpp.s
+.PHONY : src/map_goals_auto.cpp.s
+
+src/map_goals_hardcoded.o: src/map_goals_hardcoded.cpp.o
+
+.PHONY : src/map_goals_hardcoded.o
+
+# target to build an object file
+src/map_goals_hardcoded.cpp.o:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_hardcoded.dir/build.make exercise3/CMakeFiles/map_goals_hardcoded.dir/src/map_goals_hardcoded.cpp.o
+.PHONY : src/map_goals_hardcoded.cpp.o
+
+src/map_goals_hardcoded.i: src/map_goals_hardcoded.cpp.i
+
+.PHONY : src/map_goals_hardcoded.i
+
+# target to preprocess a source file
+src/map_goals_hardcoded.cpp.i:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_hardcoded.dir/build.make exercise3/CMakeFiles/map_goals_hardcoded.dir/src/map_goals_hardcoded.cpp.i
+.PHONY : src/map_goals_hardcoded.cpp.i
+
+src/map_goals_hardcoded.s: src/map_goals_hardcoded.cpp.s
+
+.PHONY : src/map_goals_hardcoded.s
+
+# target to generate assembly for a file
+src/map_goals_hardcoded.cpp.s:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_hardcoded.dir/build.make exercise3/CMakeFiles/map_goals_hardcoded.dir/src/map_goals_hardcoded.cpp.s
+.PHONY : src/map_goals_hardcoded.cpp.s
+
+src/map_goals_original.o: src/map_goals_original.cpp.o
+
+.PHONY : src/map_goals_original.o
+
+# target to build an object file
+src/map_goals_original.cpp.o:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_original.dir/build.make exercise3/CMakeFiles/map_goals_original.dir/src/map_goals_original.cpp.o
+.PHONY : src/map_goals_original.cpp.o
+
+src/map_goals_original.i: src/map_goals_original.cpp.i
+
+.PHONY : src/map_goals_original.i
+
+# target to preprocess a source file
+src/map_goals_original.cpp.i:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_original.dir/build.make exercise3/CMakeFiles/map_goals_original.dir/src/map_goals_original.cpp.i
+.PHONY : src/map_goals_original.cpp.i
+
+src/map_goals_original.s: src/map_goals_original.cpp.s
+
+.PHONY : src/map_goals_original.s
+
+# target to generate assembly for a file
+src/map_goals_original.cpp.s:
+	cd /home/sara/WORKSPACE/build && $(MAKE) -f exercise3/CMakeFiles/map_goals_original.dir/build.make exercise3/CMakeFiles/map_goals_original.dir/src/map_goals_original.cpp.s
+.PHONY : src/map_goals_original.cpp.s
 
 # Help Target
 help:
@@ -932,15 +974,15 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
-	@echo "... map_goals"
-	@echo "... map_goals2"
+	@echo "... install/strip"
+	@echo "... map_goals_hardcoded"
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... map_goals_auto"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_eus"
@@ -957,6 +999,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
+	@echo "... map_goals_original"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
@@ -986,12 +1029,15 @@ help:
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... nav_msgs_generate_messages_eus"
-	@echo "... src/map_goals.o"
-	@echo "... src/map_goals.i"
-	@echo "... src/map_goals.s"
-	@echo "... src/map_goals2.o"
-	@echo "... src/map_goals2.i"
-	@echo "... src/map_goals2.s"
+	@echo "... src/map_goals_auto.o"
+	@echo "... src/map_goals_auto.i"
+	@echo "... src/map_goals_auto.s"
+	@echo "... src/map_goals_hardcoded.o"
+	@echo "... src/map_goals_hardcoded.i"
+	@echo "... src/map_goals_hardcoded.s"
+	@echo "... src/map_goals_original.o"
+	@echo "... src/map_goals_original.i"
+	@echo "... src/map_goals_original.s"
 .PHONY : help
 
 

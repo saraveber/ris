@@ -18,10 +18,12 @@ catkin_package()
 
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
-add_executable(map_goals2 src/map_goals2.cpp)
+add_executable(map_goals_hardcoded src/map_goals_hardcoded.cpp)
 include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
-add_executable(map_goals src/map_goals.cpp)
+add_executable(map_goals_original src/map_goals_original.cpp)
+include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
+add_executable(map_goals_auto src/map_goals_auto.cpp)
 
-
-target_link_libraries(map_goals2 ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-target_link_libraries(map_goals ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(map_goals_original ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(map_goals_hardcoded ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(map_goals_auto ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})

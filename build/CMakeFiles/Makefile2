@@ -82,8 +82,9 @@ clean: exercise4/clean
 # Directory level rules for directory exercise3
 
 # Recursive "all" directory target.
-exercise3/all: exercise3/CMakeFiles/map_goals.dir/all
-exercise3/all: exercise3/CMakeFiles/map_goals2.dir/all
+exercise3/all: exercise3/CMakeFiles/map_goals_hardcoded.dir/all
+exercise3/all: exercise3/CMakeFiles/map_goals_auto.dir/all
+exercise3/all: exercise3/CMakeFiles/map_goals_original.dir/all
 
 .PHONY : exercise3/all
 
@@ -93,11 +94,11 @@ exercise3/preinstall:
 .PHONY : exercise3/preinstall
 
 # Recursive "clean" directory target.
-exercise3/clean: exercise3/CMakeFiles/map_goals.dir/clean
-exercise3/clean: exercise3/CMakeFiles/map_goals2.dir/clean
+exercise3/clean: exercise3/CMakeFiles/map_goals_hardcoded.dir/clean
 exercise3/clean: exercise3/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
 exercise3/clean: exercise3/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/clean
 exercise3/clean: exercise3/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/clean
+exercise3/clean: exercise3/CMakeFiles/map_goals_auto.dir/clean
 exercise3/clean: exercise3/CMakeFiles/actionlib_generate_messages_py.dir/clean
 exercise3/clean: exercise3/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
 exercise3/clean: exercise3/CMakeFiles/actionlib_generate_messages_eus.dir/clean
@@ -113,6 +114,7 @@ exercise3/clean: exercise3/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 exercise3/clean: exercise3/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 exercise3/clean: exercise3/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
 exercise3/clean: exercise3/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+exercise3/clean: exercise3/CMakeFiles/map_goals_original.dir/clean
 exercise3/clean: exercise3/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 exercise3/clean: exercise3/CMakeFiles/roscpp_generate_messages_py.dir/clean
 exercise3/clean: exercise3/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
@@ -467,58 +469,31 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target exercise3/CMakeFiles/map_goals.dir
+# Target rules for target exercise3/CMakeFiles/map_goals_hardcoded.dir
 
 # All Build rule for target.
-exercise3/CMakeFiles/map_goals.dir/all:
-	$(MAKE) -f exercise3/CMakeFiles/map_goals.dir/build.make exercise3/CMakeFiles/map_goals.dir/depend
-	$(MAKE) -f exercise3/CMakeFiles/map_goals.dir/build.make exercise3/CMakeFiles/map_goals.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sara/WORKSPACE/build/CMakeFiles --progress-num=9,10 "Built target map_goals"
-.PHONY : exercise3/CMakeFiles/map_goals.dir/all
+exercise3/CMakeFiles/map_goals_hardcoded.dir/all:
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_hardcoded.dir/build.make exercise3/CMakeFiles/map_goals_hardcoded.dir/depend
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_hardcoded.dir/build.make exercise3/CMakeFiles/map_goals_hardcoded.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sara/WORKSPACE/build/CMakeFiles --progress-num=11,12 "Built target map_goals_hardcoded"
+.PHONY : exercise3/CMakeFiles/map_goals_hardcoded.dir/all
 
 # Build rule for subdir invocation for target.
-exercise3/CMakeFiles/map_goals.dir/rule: cmake_check_build_system
+exercise3/CMakeFiles/map_goals_hardcoded.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/WORKSPACE/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals_hardcoded.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/WORKSPACE/build/CMakeFiles 0
-.PHONY : exercise3/CMakeFiles/map_goals.dir/rule
+.PHONY : exercise3/CMakeFiles/map_goals_hardcoded.dir/rule
 
 # Convenience name for target.
-map_goals: exercise3/CMakeFiles/map_goals.dir/rule
+map_goals_hardcoded: exercise3/CMakeFiles/map_goals_hardcoded.dir/rule
 
-.PHONY : map_goals
-
-# clean rule for target.
-exercise3/CMakeFiles/map_goals.dir/clean:
-	$(MAKE) -f exercise3/CMakeFiles/map_goals.dir/build.make exercise3/CMakeFiles/map_goals.dir/clean
-.PHONY : exercise3/CMakeFiles/map_goals.dir/clean
-
-#=============================================================================
-# Target rules for target exercise3/CMakeFiles/map_goals2.dir
-
-# All Build rule for target.
-exercise3/CMakeFiles/map_goals2.dir/all:
-	$(MAKE) -f exercise3/CMakeFiles/map_goals2.dir/build.make exercise3/CMakeFiles/map_goals2.dir/depend
-	$(MAKE) -f exercise3/CMakeFiles/map_goals2.dir/build.make exercise3/CMakeFiles/map_goals2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sara/WORKSPACE/build/CMakeFiles --progress-num=11,12 "Built target map_goals2"
-.PHONY : exercise3/CMakeFiles/map_goals2.dir/all
-
-# Build rule for subdir invocation for target.
-exercise3/CMakeFiles/map_goals2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/WORKSPACE/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/WORKSPACE/build/CMakeFiles 0
-.PHONY : exercise3/CMakeFiles/map_goals2.dir/rule
-
-# Convenience name for target.
-map_goals2: exercise3/CMakeFiles/map_goals2.dir/rule
-
-.PHONY : map_goals2
+.PHONY : map_goals_hardcoded
 
 # clean rule for target.
-exercise3/CMakeFiles/map_goals2.dir/clean:
-	$(MAKE) -f exercise3/CMakeFiles/map_goals2.dir/build.make exercise3/CMakeFiles/map_goals2.dir/clean
-.PHONY : exercise3/CMakeFiles/map_goals2.dir/clean
+exercise3/CMakeFiles/map_goals_hardcoded.dir/clean:
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_hardcoded.dir/build.make exercise3/CMakeFiles/map_goals_hardcoded.dir/clean
+.PHONY : exercise3/CMakeFiles/map_goals_hardcoded.dir/clean
 
 #=============================================================================
 # Target rules for target exercise3/CMakeFiles/actionlib_generate_messages_nodejs.dir
@@ -600,6 +575,33 @@ tf2_msgs_generate_messages_lisp: exercise3/CMakeFiles/tf2_msgs_generate_messages
 exercise3/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/clean:
 	$(MAKE) -f exercise3/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make exercise3/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/clean
 .PHONY : exercise3/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target exercise3/CMakeFiles/map_goals_auto.dir
+
+# All Build rule for target.
+exercise3/CMakeFiles/map_goals_auto.dir/all:
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_auto.dir/build.make exercise3/CMakeFiles/map_goals_auto.dir/depend
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_auto.dir/build.make exercise3/CMakeFiles/map_goals_auto.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sara/WORKSPACE/build/CMakeFiles --progress-num=9,10 "Built target map_goals_auto"
+.PHONY : exercise3/CMakeFiles/map_goals_auto.dir/all
+
+# Build rule for subdir invocation for target.
+exercise3/CMakeFiles/map_goals_auto.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/WORKSPACE/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals_auto.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/WORKSPACE/build/CMakeFiles 0
+.PHONY : exercise3/CMakeFiles/map_goals_auto.dir/rule
+
+# Convenience name for target.
+map_goals_auto: exercise3/CMakeFiles/map_goals_auto.dir/rule
+
+.PHONY : map_goals_auto
+
+# clean rule for target.
+exercise3/CMakeFiles/map_goals_auto.dir/clean:
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_auto.dir/build.make exercise3/CMakeFiles/map_goals_auto.dir/clean
+.PHONY : exercise3/CMakeFiles/map_goals_auto.dir/clean
 
 #=============================================================================
 # Target rules for target exercise3/CMakeFiles/actionlib_generate_messages_py.dir
@@ -1005,6 +1007,33 @@ std_msgs_generate_messages_eus: exercise3/CMakeFiles/std_msgs_generate_messages_
 exercise3/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
 	$(MAKE) -f exercise3/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make exercise3/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 .PHONY : exercise3/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target exercise3/CMakeFiles/map_goals_original.dir
+
+# All Build rule for target.
+exercise3/CMakeFiles/map_goals_original.dir/all:
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_original.dir/build.make exercise3/CMakeFiles/map_goals_original.dir/depend
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_original.dir/build.make exercise3/CMakeFiles/map_goals_original.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sara/WORKSPACE/build/CMakeFiles --progress-num=13,14 "Built target map_goals_original"
+.PHONY : exercise3/CMakeFiles/map_goals_original.dir/all
+
+# Build rule for subdir invocation for target.
+exercise3/CMakeFiles/map_goals_original.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/WORKSPACE/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 exercise3/CMakeFiles/map_goals_original.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/WORKSPACE/build/CMakeFiles 0
+.PHONY : exercise3/CMakeFiles/map_goals_original.dir/rule
+
+# Convenience name for target.
+map_goals_original: exercise3/CMakeFiles/map_goals_original.dir/rule
+
+.PHONY : map_goals_original
+
+# clean rule for target.
+exercise3/CMakeFiles/map_goals_original.dir/clean:
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_original.dir/build.make exercise3/CMakeFiles/map_goals_original.dir/clean
+.PHONY : exercise3/CMakeFiles/map_goals_original.dir/clean
 
 #=============================================================================
 # Target rules for target exercise3/CMakeFiles/geometry_msgs_generate_messages_lisp.dir

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sara/WORKSPACE/src/exercise3/src/map_goals.cpp
+/home/sara/WORKSPACE/src/exercise3/src/map_goals_auto.cpp
 ros/ros.h
 /home/sara/WORKSPACE/src/exercise3/src/ros/ros.h
 nav_msgs/GetMap.h

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sara/WORKSPACE/src/exercise3/src/map_goals.cpp
+/home/sara/WORKSPACE/src/exercise3/src/map_goals_hardcoded.cpp
 ros/ros.h
 /home/sara/WORKSPACE/src/exercise3/src/ros/ros.h
 nav_msgs/GetMap.h
@@ -23,27 +23,9 @@ opencv2/core/core.hpp
 -
 opencv2/highgui/highgui.hpp
 -
-opencv2/highgui.hpp
-/home/sara/WORKSPACE/src/exercise3/src/opencv2/highgui.hpp
-opencv2/imgproc.hpp
-/home/sara/WORKSPACE/src/exercise3/src/opencv2/imgproc.hpp
-opencv2/core.hpp
--
 move_base_msgs/MoveBaseAction.h
 -
 actionlib/client/simple_action_client.h
--
-queue
--
-bit
--
-bitset
--
-cstdint
--
-initializer_list
--
-iostream
 -
 
 /opt/ros/noetic/include/actionlib/action_definition.h

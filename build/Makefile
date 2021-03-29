@@ -285,30 +285,17 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named map_goals
+# Target rules for targets named map_goals_hardcoded
 
 # Build rule for target.
-map_goals: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 map_goals
-.PHONY : map_goals
+map_goals_hardcoded: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 map_goals_hardcoded
+.PHONY : map_goals_hardcoded
 
 # fast build rule for target.
-map_goals/fast:
-	$(MAKE) -f exercise3/CMakeFiles/map_goals.dir/build.make exercise3/CMakeFiles/map_goals.dir/build
-.PHONY : map_goals/fast
-
-#=============================================================================
-# Target rules for targets named map_goals2
-
-# Build rule for target.
-map_goals2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 map_goals2
-.PHONY : map_goals2
-
-# fast build rule for target.
-map_goals2/fast:
-	$(MAKE) -f exercise3/CMakeFiles/map_goals2.dir/build.make exercise3/CMakeFiles/map_goals2.dir/build
-.PHONY : map_goals2/fast
+map_goals_hardcoded/fast:
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_hardcoded.dir/build.make exercise3/CMakeFiles/map_goals_hardcoded.dir/build
+.PHONY : map_goals_hardcoded/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_generate_messages_nodejs
@@ -348,6 +335,19 @@ tf2_msgs_generate_messages_lisp: cmake_check_build_system
 tf2_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f exercise3/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make exercise3/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
 .PHONY : tf2_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named map_goals_auto
+
+# Build rule for target.
+map_goals_auto: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 map_goals_auto
+.PHONY : map_goals_auto
+
+# fast build rule for target.
+map_goals_auto/fast:
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_auto.dir/build.make exercise3/CMakeFiles/map_goals_auto.dir/build
+.PHONY : map_goals_auto/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_generate_messages_py
@@ -543,6 +543,19 @@ std_msgs_generate_messages_eus: cmake_check_build_system
 std_msgs_generate_messages_eus/fast:
 	$(MAKE) -f exercise3/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make exercise3/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named map_goals_original
+
+# Build rule for target.
+map_goals_original: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 map_goals_original
+.PHONY : map_goals_original
+
+# fast build rule for target.
+map_goals_original/fast:
+	$(MAKE) -f exercise3/CMakeFiles/map_goals_original.dir/build.make exercise3/CMakeFiles/map_goals_original.dir/build
+.PHONY : map_goals_original/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_lisp
@@ -982,11 +995,11 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... map_goals"
-	@echo "... map_goals2"
+	@echo "... map_goals_hardcoded"
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... map_goals_auto"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_eus"
@@ -1002,6 +1015,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
+	@echo "... map_goals_original"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
